@@ -40,7 +40,7 @@ bool hasCycle(int winner, int loser)
     // When the winner exists and the candidates in the pair doesn't have the same votes 
   	while (winner != -1 && winner != loser)
     {
-        // record the locked pair
+        // record the winner of the locked pair
         bool found = false;
         for (int i = 0; i < candidate_count; i++)
         {
@@ -50,6 +50,8 @@ bool hasCycle(int winner, int loser)
                 winner = i;
             }
         }
+      
+        // exit the loop
         if (!found)
         {
             winner = -1;
